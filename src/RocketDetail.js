@@ -24,7 +24,10 @@ function Rocket({ match }) {
         <div>
             <h1>{rocket.name}</h1>
             <h5>{rocket.description}</h5>
-            <img src={rocket.flickr_images[0]} width='100%' alt='' />
+            {/* <img src={rocket.flickr_images[0]} width='80%' alt='' /> */}
+            {rocket.flickr_images.map((image, index) => (
+                <img key={index} src={image} width='80%' alt='' />
+            ))}
         </div>
     );
 }
